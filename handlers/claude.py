@@ -21,11 +21,9 @@ ANTHROPIC_MODEL = "claude-3-haiku-20240307"
 ANTHROPIC_PRO_MODEL = "claude-3-opus-20240229"
 
 if environ.get("ANTHROPIC_BASE_URL"):
-    client = Anthropic(
-        base_url=ANTHROPIC_BASE_URL, api_key=ANTHROPIC_API_KEY, timeout=20
-    )
+    client = Anthropic(base_url=ANTHROPIC_BASE_URL, api_key=ANTHROPIC_API_KEY)
 else:
-    client = Anthropic(api_key=ANTHROPIC_API_KEY, timeout=20)
+    client = Anthropic(api_key=ANTHROPIC_API_KEY)
 
 
 # Global history cache
