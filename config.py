@@ -1,4 +1,5 @@
 from functools import cached_property
+from typing import Literal
 
 import openai
 from pydantic_settings import BaseSettings, SettingsConfigDict
@@ -13,6 +14,11 @@ class Settings(BaseSettings):
     openai_api_key: str | None = None
     openai_model: str = "gpt-4o-mini"
     openai_base_url: str = "https://api.openai.com/v1"
+
+    minimax_api_key: str | None = None
+    minimax_model: str = "MiniMax-M3"
+    minimax_api_type: Literal["openai", "anthropic"] = "openai"
+    minimax_base_url: str | None = None
 
     google_gemini_api_key: str | None = None
     anthropic_api_key: str | None = None
