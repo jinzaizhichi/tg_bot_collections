@@ -66,6 +66,21 @@ Note, if you are using third party service, you need to `export OPENAI_API_BASE=
 Optional web search support:
 - export `OLLAMA_WEB_SEARCH_API_KEY=${the_ollama_web_search_api_key}` (and `OLLAMA_WEB_SEARCH_MAX_RESULTS` as needed)
 
+## Bot -> MiniMax
+
+1. visit https://platform.minimax.io get the key
+2. export `MINIMAX_API_KEY=${the_key}`
+3. use `minimax: ${message}` or `/minimax_pro ${message}` to ask
+
+The handler defaults to `MiniMax-M3` and the global OpenAI-compatible API. Set
+`MINIMAX_MODEL=MiniMax-M2.7` to use MiniMax-M2.7. Select an API type and endpoint
+with the following environment variables:
+
+| API type | Global endpoint | China endpoint |
+| --- | --- | --- |
+| OpenAI | `MINIMAX_API_TYPE=openai MINIMAX_BASE_URL=https://api.minimax.io/v1` | `MINIMAX_API_TYPE=openai MINIMAX_BASE_URL=https://api.minimaxi.com/v1` |
+| Anthropic | `MINIMAX_API_TYPE=anthropic MINIMAX_BASE_URL=https://api.minimax.io/anthropic` | `MINIMAX_API_TYPE=anthropic MINIMAX_BASE_URL=https://api.minimaxi.com/anthropic` |
+
 ## Bot -> llama3
 
 1. visit https://console.groq.com/docs/quickstart get the key
